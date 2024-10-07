@@ -1,14 +1,40 @@
-|-- ml-pipeline/
-    |-- data/
-        |-- raw/               # Raw data from AWS Timestream
-        |-- cleaned/            # Cleaned and processed data
-    |-- src/
-        |-- data_collection.py  # Collect data from AWS Timestream
-        |-- preprocessing.py    # Data cleaning and preprocessing steps
-        |-- model_training.py   # Training your ML model
-        |-- edge_deployment.py  # Code for deploying on the edge
-    |-- models/
-        |-- model.h5            # Trained model saved here
-    |-- README.md               # Project overview and instructions
-    |-- requirements.txt        # List of dependencies
-    |-- .gitignore              # Files and directories to ignore
+-- Project Directory Structure: Battery_SOC_Temp_Estimation
+
+-- Battery_SOC_Temp_Estimation/
+-- |-- data/                              -- Data folder to store input/output data
+-- |
+-- |-- models/                            -- Pre-trained models, checkpoints, and trained models
+-- |   |-- AvgTmp_model_LSTM.h5           -- LSTM model for AvgTmp prediction
+-- |   |-- FNN_model_yearly.h5            -- FNN model for yearly predictions
+-- |   |-- lstm_model_new_data_2.h5       -- LSTM model for new data
+-- |
+-- |-- scripts/                           -- All scripts related to different tasks in the project
+-- |   |-- aws_integration/               -- Scripts to integrate with AWS Timestream
+-- |   |   |-- AWS_timestream_to_python.py -- Script for AWS Timestream data processing
+-- |   |
+-- |   |-- preprocessing/                 -- Scripts for data collection and preprocessing
+-- |   |   |-- data_collection_preprocessing.py -- Preprocess data collected from cloud
+-- |   |   |-- extract_combine_current_data.py  -- Combine and extract data from current datasets
+-- |   |   |-- resample_current_data.py        -- Resample current data
+-- |   |   |-- rescale_current_data.py         -- Rescale the data for modeling
+-- |   |
+-- |   |-- model_training/                -- Scripts to train machine learning models
+-- |   |   |-- convo_lstm.py              -- Script for ConvoLSTM SOC prediction
+-- |   |   |-- FNN_Temp_prediction.py     -- FNN-based temperature prediction
+-- |   |   |-- train_FNN_winter_finetune.py -- Finetune FNN model for winter data
+-- |   |   |-- train_LSTM_Avg_temp_seasonal.py -- LSTM temperature prediction for seasonal data
+-- |   |   |-- train_LSTM_temp.py         -- LSTM-based temperature prediction
+-- |   |   |-- train_LSTM_temperature_prediction.py -- Another LSTM temperature prediction script
+-- |   |   |-- Re-train LSTM on simulated data.py -- Retrain LSTM model on simulated data
+-- |
+-- |   |-- simulations/                   -- Simulation scripts
+-- |   |   |-- PyBamm_simulation.py        -- PyBAMM code for battery simulation
+-- |   |   |-- octave_simulation_full.py   -- Octave-based full simulation script
+-- |
+-- |   |-- evaluation/                    -- Scripts for evaluating models and results
+-- |   |   |-- Test_model.py               -- Model testing script
+-- |   |   |-- test_saved_model.py         -- Testing saved models
+-- |
+-- |-- README.md                          -- Project overview and instructions
+-- |-- requirements.txt                   -- List of dependencies
+-- |-- .gitignore                         -- Files and directories to ignore
