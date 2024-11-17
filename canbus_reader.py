@@ -278,8 +278,8 @@ def combine_signals_to_single_cell(file_paths, desired_signal_suffixes):
 
 # usage for example
 if __name__ == "__main__":
-    blf_file_path = "Dmitry2024_01_14_20_35_09.blf"
-    dbc_file_path = "CanDbD_Internal LMD Type-M BCU General Software Rev 2.5.2.dbc"
+    blf_file_path = "blf_file.blf"
+    dbc_file_path = "dbc_file.dbc"
     output_folder = "output_can_data_3"
     target_ids = {66052, 66050, 66048}
 
