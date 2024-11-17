@@ -32,8 +32,8 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Load dataset
-base_dir = '/content/drive/My Drive/final_concatenate'
-output_file = os.path.join(base_dir, 'final_combined.parquet')
+base_dir = 'data/batter_data.parquet'
+output_file = os.path.join(base_dir, 'combined.parquet')
 combined_data = pd.read_parquet(output_file)
 
 # Define features and target
