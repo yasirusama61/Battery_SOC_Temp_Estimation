@@ -65,7 +65,7 @@ import plotly.graph_objs as go
 import plotly.io as pio
 
 # Load the training data (test_df_1)
-train_df = pd.read_csv('filtered_file_2327200051.csv')
+train_df = pd.read_csv('filtered_file_2.csv')
 train_df = train_df.drop(['N', 'SN'], axis=1)
 train_df = train_df.rename(columns={'time': 'Time', 'BtryPckV': 'Voltage', 'BtryPckI': 'Current', 'PmpDty': 'PumpDutyCycle', 'LqdLvl': 'LiquidLevel'})
 train_df['Date'] = pd.to_datetime(train_df['Time'], format='%d-%m-%Y %H:%M:%S')
